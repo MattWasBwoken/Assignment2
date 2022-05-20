@@ -92,8 +92,8 @@ public class BillImpl implements Bill{
     }
     
     public List<Order> getFreeOrders(List<Order> ordini) throws BillException {
-    	List<Order> ordiniGratis = new ArrayList<Order>();
-	for (int i = 0; i < ordini.size(); i++) {
+        List<Order> ordiniGratis = new ArrayList<Order>();
+        for (int i = 0; i < ordini.size(); i++) {
             if(ordini.get(i).getUser().getAge()<18 &&
              ordini.get(i).getOrarioOrdine().isAfter(LocalTime.of(18,00,00,00)) &&
              ordini.get(i).getOrarioOrdine().isAfter(LocalTime.of(18,00,00,00))) {
