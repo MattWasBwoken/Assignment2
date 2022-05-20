@@ -82,6 +82,6 @@ public class BillImplTest {
         for(int i=0; i<3; i++) {
             itemsOrdered.add(new EItem( ItemType.Keyboard, "Logitech Tastiera",80.00));
         }
-        assertEquals(350.00, testBill.getOrderPrice(itemsOrdered,user), 0.0);
+        assertEquals(370.00, testBill.getOrderPrice(itemsOrdered,user), 0.0);
     }
 }
