@@ -84,4 +84,12 @@ public class BillImplTest {
         }
         assertEquals(370.00, testBill.getOrderPrice(itemsOrdered,user), 0.0);
     }
+    
+    @Test
+    public void testSconto1000(){
+        for(int i=0; i<12; i++) {
+            itemsOrdered.add(new EItem( ItemType.Motherboard, "MSI Scheda Madre",90.00));
+        }    
+        assertEquals(972.00, testBill.getOrderPrice(itemsOrdered,user), 0.0);
+    }
 }
