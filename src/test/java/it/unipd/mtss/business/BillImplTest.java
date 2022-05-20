@@ -38,9 +38,10 @@ public class BillImplTest {
         itemsOrdered.add(new EItem( ItemType.Processor, "Intel Processore i5",265.00));
         itemsOrdered.add(new EItem( ItemType.Motherboard, "MSI Scheda Madre", 90.00));
         itemsOrdered.add(new EItem( ItemType.Mouse, "Logitech Mouse Wireless", 65.00));
+        itemsOrdered.add(new EItem( ItemType.Mouse, "Logitech Mouse Wireless", 65.00));
         itemsOrdered.add(new EItem( ItemType.Keyboard, "Logitech Tastiera", 80.00));
         
-        assertEquals(500, testBill.getOrderPrice(itemsOrdered,user), 0.0);
+        assertEquals(565, testBill.getOrderPrice(itemsOrdered,user), 0.0);
     }
     
     @Test(expected=BillException.class)
@@ -70,5 +71,17 @@ public class BillImplTest {
             itemsOrdered.add(new EItem( ItemType.Mouse, "Logitech Mouse Wireless",65.00));
         }       
         assertEquals(650.00, testBill.getOrderPrice(itemsOrdered,user), 0.0);
+    }
+    
+    @Test
+    public void testArticoloRegalo() {
+
+        for(int i=0; i<3; i++) {
+            itemsOrdered.add(new EItem( ItemType.Mouse, "Logitech Mouse Wireless",65.00));
+        }       
+        for(int i=0; i<3; i++) {
+            itemsOrdered.add(new EItem( ItemType.Keyboard, "Logitech Tastiera",80.00));
+        }
+        assertEquals(350.00, testBill.getOrderPrice(itemsOrdered,user), 0.0);
     }
 }
