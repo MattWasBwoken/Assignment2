@@ -62,4 +62,13 @@ public class BillImplTest {
         }       
         assertEquals(1457.50, testBill.getOrderPrice(itemsOrdered,user), 0.0);
     }
+    
+    @Test
+    public void testMouseRegalo() {
+
+        for(int i=0; i<11; i++) {
+            itemsOrdered.add(new EItem( ItemType.Mouse, "Logitech Mouse Wireless",65.00));
+        }       
+        assertEquals(650.00, testBill.getOrderPrice(itemsOrdered,user), 0.0);
+    }
 }
