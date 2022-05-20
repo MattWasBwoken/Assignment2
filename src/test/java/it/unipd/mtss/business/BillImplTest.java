@@ -61,7 +61,7 @@ public class BillImplTest {
         for(int i=0; i<6; i++) {
             itemsOrdered.add(new EItem(ItemType.Processor, "Intel Processore i5",265.00));
         }       
-        assertEquals(1457.50, testBill.getOrderPrice(itemsOrdered,user), 0.0);
+        assertEquals(1311.75, testBill.getOrderPrice(itemsOrdered,user), 0.0);
     }
     
     @Test
