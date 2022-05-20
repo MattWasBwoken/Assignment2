@@ -31,6 +31,10 @@ public class BillImpl implements Bill{
             throw new BillException("La lista degli ordini e' vuota");
         }
         
+        if (itemsOrdered.size() > 30) {
+            throw new BillException("Impossibile processare piu' di 30 ordini");
+        }
+        
         //Calcolo prezzo totale
         for (EItem item : itemsOrdered) {
             total += item.getPrice();

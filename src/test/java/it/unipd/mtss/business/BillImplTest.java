@@ -92,4 +92,14 @@ public class BillImplTest {
         }    
         assertEquals(972.00, testBill.getOrderPrice(itemsOrdered,user), 0.0);
     }
+    
+    @Test(expected=BillException.class)
+    public void testOrdineMax30() {
+
+        for(int i=0; i<32; i++) {
+            itemsOrdered.add(new EItem( ItemType.Motherboard, "MSI Scheda Madre",90.00));
+        }
+
+        testBill.getOrderPrice(itemsOrdered, user);
+    }
 }
